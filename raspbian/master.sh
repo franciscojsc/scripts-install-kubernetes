@@ -72,6 +72,12 @@ kubectl get nodes,svc,deploy,rs,rc,po -o wide
 
 
 echo 
+echo "**** enable apps in master ****"
+echo
+
+kubectl taint nodes --all #node-role.kubernetes.io/master-
+
+echo 
 echo "**** autocompletion kubectl ****"
 echo 
 
