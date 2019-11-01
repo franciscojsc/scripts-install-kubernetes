@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: markdownrender
+  labels:
+    app: markdownrender
+spec:
+  type: NodePort
+  ports:
+    - port: 8080
+      protocol: TCP
+      targetPort: 8080
+      nodePort: 31118
+  selector:
+    app: markdownrender
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: markdownrender
+  labels:
+   app: markdownrender
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: markdownrender
+  template:
+    metadata:
+      labels:
+        app: markdownrender
+    spec:
+      containers:
+      - name: markdownrender
+        image: functions/markdownrender:latest-armhf
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+          protocol: TCP
