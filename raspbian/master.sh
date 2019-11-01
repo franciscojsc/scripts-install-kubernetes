@@ -21,19 +21,13 @@ echo "       ██╔═██╗ ██╔══██╗╚════██
 echo "       ██║  ██╗╚█████╔╝███████║                              ";
 echo "       ╚═╝  ╚═╝ ╚════╝ ╚══════╝                              ";
 echo "                                                             ";
-
-
-
-echo  
-
 echo  " __  __           _              _   _           _       "
 echo  "|  \/  | __ _ ___| |_ ___ _ __  | \ | | ___   __| | ___  "
 echo  "| |\/| |/ _\` / __| __/ _ \ '__| |  \| |/ _ \ / _\` |/ _ \ "
 echo  "| |  | | (_| \__ \ ||  __/ |    | |\  | (_) | (_| |  __/ "
 echo  "|_|  |_|\__,_|___/\__\___|_|    |_| \_|\___/ \__,_|\___| "
 
-
-sleep 5
+read -p " $(date +%H:%M:%S) Press CRTL+C to abort... " -t 5
 
 echo  
 echo "**** Config raspberry pi 3 to work node master with k8s, Docker and Helm *****"
@@ -75,7 +69,7 @@ echo
 echo "**** enable apps in master ****"
 echo
 
-kubectl taint nodes --all #node-role.kubernetes.io/master-
+kubectl taint nodes --all node-role.kubernetes.io/master-
 
 echo 
 echo "**** autocompletion kubectl ****"
@@ -88,7 +82,7 @@ echo "source <(kubectl completion bash)" >> $HOME/.bashrc
 # echo "**** install hello world ****"
 # echo 
 
-./install_helm.sh
+./install_hello_world.sh
 
 # echo 
 # echo "**** install helm ****"
