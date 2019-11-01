@@ -1,6 +1,12 @@
 #!/bin/sh
 
 echo 
+echo "**** Install arm32v7/busybox with 1 replicas ****"
+echo
+
+- kubectl run --generator=run-pod/v1 busybox1 --image=arm32v7/busybox -- sleep 3600
+
+echo 
 echo "**** Install hello world with 3 replicas ****"
 echo
 
