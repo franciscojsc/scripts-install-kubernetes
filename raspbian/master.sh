@@ -71,12 +71,7 @@ echo
 
 kubectl taint nodes --all node-role.kubernetes.io/master-
 
-echo 
-echo "**** autocompletion kubectl ****"
-echo 
-
-echo "source <(kubectl completion bash)" >> $HOME/.bashrc
-
+../common/shell-completions.sh
 
 # echo 
 # echo "**** install hello world ****"

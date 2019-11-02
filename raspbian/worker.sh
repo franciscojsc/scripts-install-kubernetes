@@ -36,12 +36,7 @@ echo
 
 ./install_prerequisites.sh
 
-
-echo 
-echo "**** autocompletion kubectl ****"
-echo 
-
-echo "source <(kubectl completion bash)" >> $HOME/.bashrc
+../common/shell-completions.sh
 
 
 
