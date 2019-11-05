@@ -4,7 +4,7 @@ echo
 echo "**** Install arm32v7/busybox with 1 replicas ****"
 echo
 
-- kubectl run --generator=run-pod/v1 busybox1 --image=arm32v7/busybox -- sleep 3600
+kubectl run --generator=run-pod/v1 busybox1 --image=arm32v7/busybox -- sleep 3600
 
 echo 
 echo "**** Install hello world with 3 replicas ****"
@@ -25,3 +25,4 @@ curl -4 http://127.0.0.1:31118 -d "# test"
 echo
 echo
 echo
+read -p " $(date +%H:%M:%S) See result... " -t 15
