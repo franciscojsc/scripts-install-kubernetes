@@ -6,6 +6,8 @@ echo
 
 
 curl -LO https://git.io/get_helm.sh | bash
+sudo chmod +x get_helm.sh
+bash ./get_helm.sh
 
 echo 
 echo "**** config permissions ****"
