@@ -28,13 +28,6 @@ Prepare your pi, with updates, disable swap, services and communications with bl
 sudo bash ./prepare_pi.sh
 ```
 
-
-Update permissions to execute script and install prerequisites. At end, reboot the machine.
-
-```
-sudo bash ./install_prerequisites.sh
-```
-
 ### Setup Master
 ```sh
 sudo bash ./master.sh
