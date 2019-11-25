@@ -14,29 +14,36 @@
 
 ### For all machines
 
+Download repository and update files permission's to execute scripts.
+
+```
+git clone https://github.com/CBSIIFSLagarto/scripts-install-kubernetes.git
+cd scripts-install-kubernetes
+sudo chmod -R +x *
+```
+
 Prepare your pi, with updates, disable swap, services and communications with bluetooth
 
 ```
-chmod +x *
-bash ./prepare_pi.sh
+sudo bash ./prepare_pi.sh
 ```
 
 
 Update permissions to execute script and install prerequisites. At end, reboot the machine.
 
 ```
-chmod +x *
-bash ./install_prerequisites.sh
+sudo bash ./install_prerequisites.sh
 ```
 
 ### Setup Master
 ```sh
-bash ./master.sh
+sudo bash ./master.sh
 ```
 
 ### Setup workers
-```
-bash ./worker.sh
+
+```sh
+sudo bash ./worker.sh
 ```
 
 ## 🤝 Contributing
